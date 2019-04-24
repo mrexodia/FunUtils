@@ -77,19 +77,19 @@ namespace GitExtBar
             {
                 _actions = new GitExtAction[]
                 {
-                    new GitExtAction("&Clone", "GitExtensions:clone \"$currentdir$\"", Resources.IconCloneRepoGit),
-                    new GitExtAction("&Init", "GitExtensions:init \"$currentdir$\"", Resources.IconRepoCreate),
+                    new GitExtAction("&Init", "GitExtensions.exe:init \"$currentdir$\"", Resources.IconRepoCreate),
+                    new GitExtAction("&Clone", "GitExtensions.exe:clone \"$currentdir$\"", Resources.IconCloneRepoGit),
                 };
             }
             else
             {
                 _actions = new GitExtAction[]
                 {
-                    new GitExtAction("&Commit", "GitExtensions:commit", Resources.IconCommit),
-                    new GitExtAction("&Browse", "GitExtensions:browse", Resources.IconBrowseFileExplorer),
-                    new GitExtAction("Pu&ll", "GitExtensions:pull", Resources.IconPull),
-                    new GitExtAction("&Push", "GitExtensions:push", Resources.IconPush),
-                    new GitExtAction("&Fetch", "cmd:/c \"git fetch & pause\"", Resources.IconPullFetch),
+                    new GitExtAction("&Commit", "GitExtensions.exe:commit", Resources.IconCommit),
+                    new GitExtAction("&Browse", "GitExtensions.exe:browse", Resources.IconBrowseFileExplorer),
+                    new GitExtAction("Pu&ll", "GitExtensions.exe:pull", Resources.IconPull),
+                    new GitExtAction("&Push", "GitExtensions.exe:push", Resources.IconPush),
+                    new GitExtAction("&Fetch", "cmd.exe:/c \"git fetch & pause\"", Resources.IconPullFetch),
                 };
             }
 
