@@ -90,6 +90,8 @@ namespace GitExtBar
                     new GitExtAction("Pu&ll", "GitExtensions.exe:pull", Resources.IconPull),
                     new GitExtAction("&Push", "GitExtensions.exe:push", Resources.IconPush),
                     new GitExtAction("&Fetch", "cmd.exe:/c \"git fetch & pause\"", Resources.IconPullFetch),
+                    new GitExtAction("&Status", "cmd.exe:/c \"git status & pause\"", Resources.IconAbout),
+                    new GitExtAction("&Remotes", "GitExtensions.exe:remotes", Resources.IconSettings),
                 };
             }
 

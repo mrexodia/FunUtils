@@ -39,7 +39,7 @@
             this.listViewActions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listViewActions.Location = new System.Drawing.Point(-1, 9);
             this.listViewActions.Name = "listViewActions";
-            this.listViewActions.Size = new System.Drawing.Size(354, 42);
+            this.listViewActions.Size = new System.Drawing.Size(415, 42);
             this.listViewActions.TabIndex = 1;
             this.listViewActions.UseCompatibleStateImageBehavior = false;
             // 
@@ -50,7 +50,7 @@
             this.panel1.Controls.Add(this.listViewActions);
             this.panel1.Location = new System.Drawing.Point(12, 29);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(354, 61);
+            this.panel1.Size = new System.Drawing.Size(415, 61);
             this.panel1.TabIndex = 2;
             // 
             // labelAction
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 108);
+            this.ClientSize = new System.Drawing.Size(439, 108);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelAction);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
