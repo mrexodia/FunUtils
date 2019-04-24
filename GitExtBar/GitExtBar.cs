@@ -38,24 +38,19 @@ namespace GitExtBar
                 var splitIdx = Command.IndexOf(':');
                 var fileName = Command.Substring(0, splitIdx);
                 var arguments = Command.Substring(splitIdx + 1);
+                var currentDirectory = Directory.GetCurrentDirectory();
+                arguments = arguments.Replace("$currentdir$", currentDirectory);
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = fileName,
                     Arguments = arguments,
-                    WorkingDirectory = Directory.GetCurrentDirectory(),
+                    WorkingDirectory = currentDirectory,
                     UseShellExecute = true,
                 });
             }
         }
 
-        GitExtAction[] _actions = new GitExtAction[]
-        {
-            new GitExtAction("&Commit", "GitExtensions:commit", Resources.IconCommit),
-            new GitExtAction("&Browse", "GitExtensions:browse", Resources.IconBrowseFileExplorer),
-            new GitExtAction("Pu&ll", "GitExtensions:pull", Resources.IconPull),
-            new GitExtAction("&Push", "GitExtensions:push", Resources.IconPush),
-            new GitExtAction("&Fetch", "cmd:/c \"git fetch & pause\"", Resources.IconPullFetch),
-        };
+        GitExtAction[] _actions;
 
         public static string Git(string command)
         {
@@ -80,8 +75,22 @@ namespace GitExtBar
 
             if (Git("rev-parse --is-inside-work-tree") != "true")
             {
-                MessageBox.Show(this, "Not a git repository!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Environment.Exit(1);
+                _actions = new GitExtAction[]
+                {
+                    new GitExtAction("&Clone", "GitExtensions:clone \"$currentdir$\"", Resources.IconCloneRepoGit),
+                    new GitExtAction("&Init", "GitExtensions:init \"$currentdir$\"", Resources.IconRepoCreate),
+                };
+            }
+            else
+            {
+                _actions = new GitExtAction[]
+                {
+                    new GitExtAction("&Commit", "GitExtensions:commit", Resources.IconCommit),
+                    new GitExtAction("&Browse", "GitExtensions:browse", Resources.IconBrowseFileExplorer),
+                    new GitExtAction("Pu&ll", "GitExtensions:pull", Resources.IconPull),
+                    new GitExtAction("&Push", "GitExtensions:push", Resources.IconPush),
+                    new GitExtAction("&Fetch", "cmd:/c \"git fetch & pause\"", Resources.IconPullFetch),
+                };
             }
 
             listViewActions.ItemActivate += (s, e) =>
