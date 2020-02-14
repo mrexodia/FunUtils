@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitExtBar", "GitExtBar\GitE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirBrowser", "DirBrowser\DirBrowser.csproj", "{AA8B9201-F1F6-4009-99EF-4E00E751C124}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "separate-console", "separate-console\separate-console.csproj", "{4A112556-38F8-473B-9BA1-A8FA58338FD9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{AA8B9201-F1F6-4009-99EF-4E00E751C124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA8B9201-F1F6-4009-99EF-4E00E751C124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AA8B9201-F1F6-4009-99EF-4E00E751C124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A112556-38F8-473B-9BA1-A8FA58338FD9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A112556-38F8-473B-9BA1-A8FA58338FD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A112556-38F8-473B-9BA1-A8FA58338FD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A112556-38F8-473B-9BA1-A8FA58338FD9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
