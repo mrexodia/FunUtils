@@ -88,7 +88,9 @@ int wmain(int argc, wchar_t* argv[])
 		ShExecInfo.fMask = SEE_MASK_NOCLOSEPROCESS;
 		ShExecInfo.hwnd = GetConsoleWindow();
 		ShExecInfo.lpVerb = L"runas";
-		ShExecInfo.lpFile = argv[0];
+		wchar_t sudo[MAX_PATH] = L"";
+		GetModuleFileNameW(GetModuleHandleW(0), sudo, _countof(sudo));
+		ShExecInfo.lpFile = sudo;
 		ShExecInfo.lpParameters = commandLine;
 		ShExecInfo.lpDirectory = NULL;
 		ShExecInfo.nShow = SW_HIDE;
