@@ -6,3 +6,4 @@ Debug/
 x64/
 *.aps
 *.vcxproj.user
+packages/
