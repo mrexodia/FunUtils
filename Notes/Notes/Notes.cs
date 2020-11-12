@@ -131,6 +131,7 @@ namespace Notes
             var table = radioButtonWork.Checked ? "Work" : "Personal";
             if (MessageBox.Show(this, sb.ToString(), $"Submit to {table} Airtable?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                Hide();
                 using (var airtableBase = new AirtableBase(Settings.Default.APIKey, Settings.Default.BaseID))
                 {
                     var fields = new Fields[notes.Count];
@@ -146,16 +147,17 @@ namespace Notes
                     var response = await airtableBase.CreateMultipleRecords(table, fields);
                     if (response.Success)
                     {
-                        MessageBox.Show(this, "Records added!", "Notes", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         treeList.Clear();
                         Close();
                     }
                     else if (response.AirtableApiError is AirtableApiException)
                     {
+                        Show();
                         MessageBox.Show(this, response.AirtableApiError.ErrorMessage, "Failed to create records :-(", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
+                        Show();
                         MessageBox.Show(this, "Unknown error", "Failed to create records :-(", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
