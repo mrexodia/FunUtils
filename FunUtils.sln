@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notes", "Notes\Notes\Notes.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeList", "Notes\TreeList\TreeList.csproj", "{CDF6194D-77E1-4E17-8D2A-94908663D09D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RipGrepGUI", "RipGrepGUI\RipGrepGUI.csproj", "{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{CDF6194D-77E1-4E17-8D2A-94908663D09D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDF6194D-77E1-4E17-8D2A-94908663D09D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDF6194D-77E1-4E17-8D2A-94908663D09D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
