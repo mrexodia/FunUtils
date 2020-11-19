@@ -129,7 +129,7 @@ namespace Notes
                 }
             }
             var table = radioButtonWork.Checked ? "Work" : "Personal";
-            if (MessageBox.Show(this, sb.ToString(), $"Submit to {table} Airtable?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (true || MessageBox.Show(this, sb.ToString(), $"Submit to {table} Airtable?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 Hide();
                 using (var airtableBase = new AirtableBase(Settings.Default.APIKey, Settings.Default.BaseID))
