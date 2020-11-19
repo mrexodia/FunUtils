@@ -71,10 +71,10 @@ namespace RipGrepGUI
             this.richTextBoxResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxResults.BackColor = System.Drawing.Color.Black;
+            this.richTextBoxResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(12)))), ((int)(((byte)(12)))));
             this.richTextBoxResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBoxResults.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxResults.ForeColor = System.Drawing.Color.White;
+            this.richTextBoxResults.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBoxResults.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.richTextBoxResults.Location = new System.Drawing.Point(15, 38);
             this.richTextBoxResults.Name = "richTextBoxResults";
             this.richTextBoxResults.Size = new System.Drawing.Size(1119, 400);
