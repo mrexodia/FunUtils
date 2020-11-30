@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeList", "Notes\TreeList\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RipGrepGUI", "RipGrepGUI\RipGrepGUI.csproj", "{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmdTitle", "CmdTitle\CmdTitle.csproj", "{33D78399-FBE0-4D13-8D1D-B170C7E0DDBB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2A25A4F-3C53-4690-B81B-B6F6E4CFFE97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33D78399-FBE0-4D13-8D1D-B170C7E0DDBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33D78399-FBE0-4D13-8D1D-B170C7E0DDBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33D78399-FBE0-4D13-8D1D-B170C7E0DDBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33D78399-FBE0-4D13-8D1D-B170C7E0DDBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
