@@ -8,28 +8,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using RipGrepGUI.Properties;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Configuration;
 
 namespace RipGrepGUI
 {
     public partial class RipGrepGUI : Form
     {
+        [DllImport("kernel32.dll", SetLastError = true)]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool AllocConsole();
+
+        internal static List<(string, bool)> Parameters = new List<(string, bool)>();
+
         public RipGrepGUI()
         {
+#if DEBUG
+            AllocConsole();
+#endif
+
             InitializeComponent();
-            Icon = Icon.ExtractAssociatedIcon(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);
             Text += " (" + System.IO.Directory.GetCurrentDirectory() + ")";
+            checkBoxCaseSensitive.ParameterInverted("-i");
+            checkBoxContext.Parameter("-C5");
         }
 
         private async void buttonSearch_Click(object sender, EventArgs e)
         {
             buttonSearch.Enabled = false;
             richTextBoxResults.Clear();
+            var expression = textBoxSearch.Text;
+            var split = expression.Split(':');
             var p = new Process
             {
+                // -f PATTERN
                 StartInfo = new ProcessStartInfo
                 {
                     FileName = "rg.exe",
-                    Arguments = $"--pretty --sort-files -i -C3 -f \"{textBoxSearch.Text}\"",
+                    Arguments = $"--pretty --sort-files -i -C3 -H \"{textBoxSearch.Text}\"",
                     UseShellExecute = false,
                     CreateNoWindow = true,
                     RedirectStandardOutput = true,
