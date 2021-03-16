@@ -14,6 +14,10 @@ Icon source: https://github.com/gitextensions/gitextensions
 
 Icon source: https://visualpharm.com/free-icons/open-595b40b85ba036ed117da75e
 
+## Ghidra
+
+Copy `Ghidra.exe` next to `ghidraRun.bat` and add a shortcut to your desktop/start menu.
+
 ## sudo
 
 Simple `sudo` utility for Windows:
