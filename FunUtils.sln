@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CmdTitle", "CmdTitle\CmdTit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ghidra", "Ghidra\Ghidra.csproj", "{007AAFF6-D3CB-41E1-867E-4F0A5A8C821F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VsCompiler", "VsCompiler\VsCompiler.csproj", "{8FDD3EDE-FBF3-4FDD-B018-2E9223795C6D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
