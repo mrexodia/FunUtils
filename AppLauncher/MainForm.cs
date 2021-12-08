@@ -18,6 +18,10 @@ namespace AppLauncher
 
         string filter = "";
         Launchable[] filtered;
+        Timer windowEnumTimer = new Timer
+        {
+            Interval = 1000,
+        };
 
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
@@ -84,8 +88,21 @@ namespace AppLauncher
             }
 
             listBoxLaunchables.DataSource = launchables;
-            listBoxLaunchables.KeyDown += ListBox1_KeyUp;
+            listBoxLaunchables.KeyDown += ListBoxLaunchables_KeyUp;
             listBoxLaunchables.Focus();
+
+            windowEnumTimer.Tick += (sender, e) =>
+            {
+                windowEnumTimer.Stop();
+                EnumWindows();
+                windowEnumTimer.Start();
+            };
+            windowEnumTimer.Start();
+        }
+
+        private void EnumWindows()
+        {
+            MessageBox.Show("EnumWindows()");
         }
 
         protected override void WndProc(ref Message m)
@@ -138,7 +155,7 @@ namespace AppLauncher
             }
         }
 
-        private void ListBox1_KeyUp(object sender, KeyEventArgs e)
+        private void ListBoxLaunchables_KeyUp(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
             switch (e.KeyCode)
