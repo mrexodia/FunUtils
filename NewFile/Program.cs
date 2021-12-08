@@ -15,6 +15,11 @@ namespace NewFile
         {
             var fileName = Interaction.InputBox("Enter file name to create:", "Total Commander");
             var fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName.Replace('/', Path.DirectorySeparatorChar));
+
+            if (string.IsNullOrEmpty(fullPath))
+            {
+                return;
+            }
             
             if (File.Exists(fullPath))
             {
