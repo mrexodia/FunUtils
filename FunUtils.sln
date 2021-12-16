@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewFile", "NewFile\NewFile.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLauncher", "AppLauncher\AppLauncher.csproj", "{0DB1C5AA-E59E-41E4-A573-09AE9F47D894}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SysShellHandler", "SysShellHandler\SysShellHandler.csproj", "{127B1DBB-E350-426E-982E-3C5A6F850F6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{0DB1C5AA-E59E-41E4-A573-09AE9F47D894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DB1C5AA-E59E-41E4-A573-09AE9F47D894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DB1C5AA-E59E-41E4-A573-09AE9F47D894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{127B1DBB-E350-426E-982E-3C5A6F850F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{127B1DBB-E350-426E-982E-3C5A6F850F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{127B1DBB-E350-426E-982E-3C5A6F850F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{127B1DBB-E350-426E-982E-3C5A6F850F6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

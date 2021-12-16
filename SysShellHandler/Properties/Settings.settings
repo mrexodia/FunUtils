@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SysShellHandler.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="MakeUsermode" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\CodeBlocks\driver_unpacking\x64\Release\MakeUsermode.exe</Value>
+    </Setting>
+    <Setting Name="Signtool" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\Program Files (x86)\Windows Kits\10\bin\x64\signtool.exe</Value>
+    </Setting>
+    <Setting Name="CffExplorer" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\Program Files\NTCore\Explorer Suite\CFF Explorer.exe</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
