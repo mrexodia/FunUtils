@@ -38,4 +38,4 @@ Icon source: https://www.svgrepo.com/svg/142693/notes
 
 Simple utility to provide some meaningful options when opening a `.sys` file in explorer.
 
-![SysShellHandler](https://i.imgur.com/ZIGjeCs.png)
+![SysShellHandler](https://i.imgur.com/nAUKPOA.png)
