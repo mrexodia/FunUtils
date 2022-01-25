@@ -14,12 +14,12 @@ namespace NewFile
         static void Main(string[] args)
         {
             var fileName = Interaction.InputBox("Enter file name to create:", "Total Commander");
-            var fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName.Replace('/', Path.DirectorySeparatorChar));
-
-            if (string.IsNullOrEmpty(fullPath))
+            if (string.IsNullOrEmpty(fileName))
             {
                 return;
             }
+
+            var fullPath = Path.Combine(Directory.GetCurrentDirectory(), fileName.Replace('/', Path.DirectorySeparatorChar));
             
             if (File.Exists(fullPath))
             {
