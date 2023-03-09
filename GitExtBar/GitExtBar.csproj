@@ -57,6 +57,7 @@
     <Compile Include="GitExtBar.Designer.cs">
       <DependentUpon>GitExtBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProcessCommandLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GitExtBar.resx">

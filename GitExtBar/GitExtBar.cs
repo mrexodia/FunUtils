@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using GitExtBar.Properties;
+using System.Text;
 
 namespace GitExtBar
 {
@@ -14,6 +15,9 @@ namespace GitExtBar
     {
         public class GitExtAction
         {
+            [System.Runtime.InteropServices.DllImport("user32.dll")]
+            public static extern void SwitchToThisWindow(IntPtr hWnd, bool fAltTab);
+
             public string Name;
             public string Command;
             public Bitmap Icon;
@@ -39,7 +43,39 @@ namespace GitExtBar
                 var fileName = Command.Substring(0, splitIdx);
                 var arguments = Command.Substring(splitIdx + 1);
                 var currentDirectory = Directory.GetCurrentDirectory();
+                var gitRoot = Git("rev-parse --show-toplevel");
+                if (!string.IsNullOrEmpty(gitRoot))
+                    currentDirectory = Path.GetFullPath(gitRoot.Replace('/', '\\'));
                 arguments = arguments.Replace("$currentdir$", currentDirectory);
+
+                // Attempt to put an existing Git Extensions window in focus
+                try
+                {
+                    var processes = Process.GetProcessesByName("gitextensions");
+                    foreach (var process in processes)
+                    {
+                        var mainWindow = process.MainWindowHandle;
+                        if (mainWindow == IntPtr.Zero)
+                            continue;
+
+                        ProcessCommandLine.Retrieve(process, out var workingDirectory, ProcessCommandLine.Parameter.WorkingDirectory);
+                        workingDirectory = workingDirectory.TrimEnd('\\');
+                        if (workingDirectory.Equals(currentDirectory, StringComparison.OrdinalIgnoreCase))
+                        {
+                            ProcessCommandLine.Retrieve(process, out var commandLine, ProcessCommandLine.Parameter.CommandLine);
+                            if (commandLine.Contains(arguments))
+                            {
+                                SwitchToThisWindow(mainWindow, false);
+                                return;
+                                
+                            }
+                        }
+                    }
+                }
+                catch
+                {
+                }
+
                 Process.Start(new ProcessStartInfo
                 {
                     FileName = fileName,
@@ -83,6 +119,8 @@ namespace GitExtBar
             }
             else
             {
+                var processes = Process.GetProcesses();
+                var kurwa = new StringBuilder();
                 _actions = new GitExtAction[]
                 {
                     new GitExtAction("&Commit", "GitExtensions.exe:commit", Resources.IconCommit),
